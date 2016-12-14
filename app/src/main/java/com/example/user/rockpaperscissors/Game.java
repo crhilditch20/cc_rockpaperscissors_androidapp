@@ -82,9 +82,9 @@ public class Game {
                 updateScoreBoard("computer");
             }
         else if (userChoice.equals(computerChoice)){
-                result = "it's a draw";
+                result = "it's a draw!";
         }
-        return result + " ScoreBoard: Player: " + getScores("player") + ", Computer: " + getScores("computer");
+        return result + "\n ScoreBoard: Player: " + getScores("player") + ", Computer: " + getScores("computer");
     }
 
 }

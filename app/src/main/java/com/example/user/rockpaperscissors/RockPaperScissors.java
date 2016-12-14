@@ -27,6 +27,8 @@ public class RockPaperScissors extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        game = new Game();
+
         welcomeText = (TextView) findViewById(R.id.welcome_text);
         rockButton = (Button) findViewById(R.id.rock_button);
         paperButton = (Button) findViewById(R.id.paper_button);
@@ -36,7 +38,6 @@ public class RockPaperScissors extends AppCompatActivity {
         rockButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                game = new Game();
                 String result = game.getWinner("rock");
                 resultText.setText(result);
             }
@@ -45,7 +46,6 @@ public class RockPaperScissors extends AppCompatActivity {
         paperButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                game = new Game();
                 String result = game.getWinner("paper");
                 resultText.setText(result);
             }
@@ -54,7 +54,6 @@ public class RockPaperScissors extends AppCompatActivity {
         scissorsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                game = new Game();
                 String result = game.getWinner("scissors");
                 resultText.setText(result);
             }
