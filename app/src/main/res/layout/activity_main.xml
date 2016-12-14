@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginLeft="80dp"
+    android:background="@drawable/simons_cat_cartoon_texture_cat_94395_540x960">
+
+    <TextView
+        android:id="@+id/welcome_text"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:text="Choose your weapon!"
+        android:layout_marginTop="5dp"
+        android:layout_margin="15dp"
+        android:layout_marginLeft="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/rock_button"
+        android:text="@string/rock"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="70dp"
+        android:gravity="center"
+        android:background="#bf80ff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/paper_button"
+        android:text="@string/paper"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="70dp"
+        android:gravity="center"
+        android:background="#79ff4d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/scissors_button"
+        android:text="@string/scissors"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="70dp"
+        android:gravity="center"
+        android:background="#99ccff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/result"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:layout_marginTop="25dp"
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
