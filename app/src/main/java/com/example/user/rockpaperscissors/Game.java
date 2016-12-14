@@ -11,10 +11,12 @@ public class Game {
 
     private ArrayList<String> computerChoices;
     private HashMap<String, String> winChecker;
+    private HashMap<String, Integer> scoreBoard;
 
     public Game() {
         computerChoices = new ArrayList<String>();
         winChecker = new HashMap<String, String>();
+        scoreBoard = new HashMap<String, Integer>();
         setUpChoices();
     }
 
@@ -31,6 +33,9 @@ public class Game {
         winChecker.put("rock", "scissors");
         winChecker.put("paper", "rock");
         winChecker.put("scissors", "paper");
+
+        scoreBoard.put("player", 0);
+        scoreBoard.put("computer", 0);
 
     }
 
@@ -54,20 +59,32 @@ public class Game {
         return choice;
     }
 
+    public int getScores(String string){
+        return scoreBoard.get(string);
+    }
+
+    public void updateScoreBoard(String string) {
+        Integer currentScore = scoreBoard.get(string);
+        scoreBoard.put(string, (currentScore+1));
+    }
+
+
     public String getWinner(String string){
        String userChoice = string;
         String computerChoice = getRandomChoice();
         String result = "nobody wins";
         if (getValue(userChoice).equals(computerChoice)){
             result = "Cat chose " + computerChoice + ". You win!";
+            updateScoreBoard("player");
         }
         else if (getValue(computerChoice).equals(userChoice)) {
                 result = "Cat chose " + computerChoice + ". Cat wins!";
+                updateScoreBoard("computer");
             }
         else if (userChoice.equals(computerChoice)){
                 result = "it's a draw";
         }
-        return result;
+        return result + " ScoreBoard: Player: " + getScores("player") + ", Computer: " + getScores("computer");
     }
 
 }

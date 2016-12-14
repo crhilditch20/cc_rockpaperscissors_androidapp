@@ -44,5 +44,16 @@ public class GameTest {
         System.out.println(winnerString);
         assertNotNull(game.getWinner("rock"));
     }
+
+    @Test
+    public void testSetUpScoreBoard(){
+        assertEquals(0, game.getScores("player"));
+    }
+
+    @Test
+    public void testUpdateScoreBoard(){
+        game.updateScoreBoard("player");
+        assertEquals(1, game.getScores("player"));
+    }
 }
 
