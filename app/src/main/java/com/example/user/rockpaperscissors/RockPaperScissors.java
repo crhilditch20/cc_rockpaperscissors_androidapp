@@ -1,5 +1,6 @@
 package com.example.user.rockpaperscissors;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -18,7 +19,6 @@ public class RockPaperScissors extends AppCompatActivity {
     Button scissorsButton;
     Game game;
     TextView welcomeText;
-    TextView resultText;
 
 
     @Override
@@ -33,13 +33,16 @@ public class RockPaperScissors extends AppCompatActivity {
         rockButton = (Button) findViewById(R.id.rock_button);
         paperButton = (Button) findViewById(R.id.paper_button);
         scissorsButton = (Button) findViewById(R.id.scissors_button);
-        resultText = (TextView) findViewById(R.id.result);
+
 
         rockButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String result = game.getWinner("rock");
-                resultText.setText(result);
+
+                Intent intent = new Intent(RockPaperScissors.this, ResultPage.class);
+                intent.putExtra("score", result);
+                startActivity(intent);
             }
         });
 
@@ -47,7 +50,10 @@ public class RockPaperScissors extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String result = game.getWinner("paper");
-                resultText.setText(result);
+
+                Intent intent = new Intent(RockPaperScissors.this, ResultPage.class);
+                intent.putExtra("score", result);
+                startActivity(intent);
             }
         });
 
@@ -55,7 +61,10 @@ public class RockPaperScissors extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String result = game.getWinner("scissors");
-                resultText.setText(result);
+
+                Intent intent = new Intent(RockPaperScissors.this, ResultPage.class);
+                intent.putExtra("score", result);
+                startActivity(intent);
             }
         });
 

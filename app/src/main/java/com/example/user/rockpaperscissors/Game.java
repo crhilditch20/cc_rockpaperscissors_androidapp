@@ -84,7 +84,7 @@ public class Game {
         else if (userChoice.equals(computerChoice)){
                 result = "it's a draw!";
         }
-        return result + "\n ScoreBoard: Player: " + getScores("player") + ", Computer: " + getScores("computer");
+        return result + "\n ScoreBoard: Player: " + getScores("player") + ", Cat: " + getScores("computer");
     }
 
 }
